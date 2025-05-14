@@ -18,7 +18,7 @@ export default function App(): JSX.Element {
 
   return (
     <div className="relative flex min-h-svh flex-col bg-zinc-100">
-      <div className="container mx-auto flex flex-1 flex-col items-center">
+      <div className="container mx-auto flex flex-1 flex-col items-center py-3">
         <ShopList shops={shops} queryParams={{ ...queryParams }} />
       </div>
     </div>

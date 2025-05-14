@@ -5,6 +5,7 @@ import { useEffect, useRef, type JSX } from 'react';
 import ShopItem from './shopItem';
 import { PAGE_FETCH_LIMIT } from '@/utils/constants';
 import type { GetShopDataResult } from '@/api/getShopData';
+import ShopLoader from './shopLoader';
 
 interface ShopListProps {
   shops: Shop[];
@@ -21,8 +22,8 @@ export default function ShopList(props: ShopListProps): JSX.Element {
   const rowVirtualizer = useVirtualizer({
     count: queryParams.hasNextPage ? shops.length + 1 : shops.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 500,
-    overscan: PAGE_FETCH_LIMIT,
+    estimateSize: () => 425,
+    overscan: PAGE_FETCH_LIMIT / 2,
   });
 
   useEffect(() => {
@@ -44,7 +45,7 @@ export default function ShopList(props: ShopListProps): JSX.Element {
   ]);
 
   return (
-    <div ref={parentRef} className="h-svh w-full overflow-auto">
+    <div ref={parentRef} className="h-svh w-full overflow-auto scroll-smooth">
       <div
         style={{ height: `${rowVirtualizer.getTotalSize()}px` }}
         className="relative w-full"
@@ -59,16 +60,12 @@ export default function ShopList(props: ShopListProps): JSX.Element {
                 height: `${virtualRow.size}px`,
                 transform: `translateY(${virtualRow.start}px)`,
               }}
-              className="absolute left-0 top-0 w-full"
+              className="absolute left-0 top-0 w-full py-1.5"
             >
               {isLoaderRow ? (
-                queryParams.hasNextPage ? (
-                  'Loading more...'
-                ) : (
-                  'Nothing more to load'
-                )
+                <ShopLoader hasNextPage={queryParams.hasNextPage} />
               ) : (
-                <ShopItem item={shop} />
+                <ShopItem shop={shop} />
               )}
             </div>
           );
