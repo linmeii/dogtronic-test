@@ -1,18 +1,25 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { useEffect, type JSX } from 'react';
+import { useEffect, useState, type JSX } from 'react';
 import { getShopData } from './api/getShopData';
+import ShopList from './components/shopList';
+import type { Shop } from './api/mock';
 
 export default function App(): JSX.Element {
-  const { data } = useInfiniteQuery(getShopData());
+  const { data, ...queryParams } = useInfiniteQuery(getShopData());
+  const [shops, setShops] = useState<Shop[]>([]);
 
   useEffect(() => {
-    console.log(data);
+    setShops(data ? data.pages.flatMap((pages) => pages.data) : []);
   }, [data]);
+
+  if (queryParams.isPending) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="relative flex min-h-svh flex-col bg-zinc-100">
       <div className="container mx-auto flex flex-1 flex-col items-center">
-        <main className="grid max-w-7xl grid-cols-1 gap-4 bg-red-500 md:auto-rows-[18rem] md:grid-cols-3"></main>
+        <ShopList shops={shops} queryParams={{ ...queryParams }} />
       </div>
     </div>
   );
