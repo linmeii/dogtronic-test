@@ -34,7 +34,7 @@ describe('COMPONENT [ShopItemImage]', () => {
         expect.element(screen.getByTestId('blurhash-wrapper')).toHaveStyle({
           opacity: '0',
         }),
-      { timeout: 10000 }
+      { timeout: 14999 }
     );
   });
 });

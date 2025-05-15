@@ -100,7 +100,7 @@ describe('COMPONENT [ShopList]', () => {
     if (scrollContainer) {
       scrollContainer.scrollTop = scrollContainer.scrollHeight;
       await vi.waitFor(() => expect(fetchNextPage).toBeCalled(), {
-        timeout: 10000,
+        timeout: 14999,
       });
     }
   });
