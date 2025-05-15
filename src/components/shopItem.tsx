@@ -14,16 +14,17 @@ export default function ShopItem(props: ShopItemProps): JSX.Element {
   };
 
   return (
-    <article className="group/shop w-full relative flex h-full max-h-[425px] flex-col justify-between gap-y-4 overflow-hidden rounded-lg bg-transparent p-10">
+    <article className="group/shop relative flex h-96 max-h-96 w-full flex-col justify-between gap-y-4 overflow-hidden rounded-lg bg-transparent p-10">
       <ShopItemImage
         imageUrl={shop.imageUrl}
         alt={formatAddress(shop.address)}
       />
       <div className="relative z-10 mt-auto">
-        <small className="text-xs inline-flex items-center bg-white text-black p-1 min-h-5 gap-2.5 mb-2.5">
-          #{shop.id} {shop.type}
+        <small className="mb-2.5 inline-flex min-h-5 items-center gap-1 bg-neutral-50 px-2 py-1 text-xs text-neutral-900">
+          <span>#{shop.id}</span>
+          <span className="font-light tracking-tight">{shop.type}</span>
         </small>
-        <h1 className="text-2xl font-bold text-white md:text-3xl lg:text-5xl">
+        <h1 className="text-2xl font-bold text-neutral-50 md:text-3xl lg:text-5xl">
           {formatAddress(shop.address)}
         </h1>
       </div>

@@ -8,11 +8,11 @@ export default function ShopLoader(props: ShopLoaderProps): JSX.Element {
   const { hasNextPage } = props;
 
   return (
-    <div className="w-full flex items-center justify-center h-full max-h-[425px] flex-col bg-white p-4">
+    <div className="bg-background container mx-auto flex h-96 max-h-96 w-full flex-col items-center justify-center p-4">
       {hasNextPage ? (
-        <div className="animate-spin inline-block size-10 border-5 border-current border-t-transparent text-neutral-600 rounded-full dark:text-neutral-500" />
+        <div className="text-muted inline-block size-10 animate-spin rounded-full border-5 border-current border-t-transparent" />
       ) : (
-        <p className="font-normal leading-relaxed mx-auto lg:text-lg text-base">
+        <p className="mx-auto text-base leading-relaxed font-normal lg:text-lg">
           Nothing more to load
         </p>
       )}

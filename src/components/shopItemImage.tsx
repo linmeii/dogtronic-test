@@ -53,12 +53,12 @@ export default function ShopItemImage(props: ShopItemImageProps): JSX.Element {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 h-full w-full overflow-hidden"
+      className="bg-card absolute inset-0 h-full w-full overflow-hidden"
     >
-      {dimensions.height && dimensions.width && (
+      {dimensions.height > 0 && dimensions.width > 0 && (
         <div
           className={cn(
-            'absolute inset-0 transition-opacity duration-300',
+            'absolute inset-0 transition-opacity duration-500',
             imageLoaded ? 'opacity-0' : 'opacity-100'
           )}
         >
@@ -77,13 +77,13 @@ export default function ShopItemImage(props: ShopItemImageProps): JSX.Element {
         alt={alt}
         onLoad={() => setImageLoaded(true)}
         className={cn(
-          'h-full w-full transform-gpu object-cover transition-all duration-300 will-change-transform group-hover/shop:scale-110',
+          'h-full w-full transform-gpu object-cover transition-all duration-500 will-change-transform group-hover/shop:scale-110',
           imageLoaded ? 'opacity-100' : 'opacity-0'
         )}
       />
       <div
         className={cn(
-          'absolute inset-0 bg-gradient-to-t from-black/80 to-transparent transition-opacity duration-300',
+          'absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-500',
           imageLoaded ? 'opacity-100' : 'opacity-0'
         )}
       />
