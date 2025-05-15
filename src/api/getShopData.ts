@@ -16,7 +16,7 @@ export type GetShopDataResult = {
  * (one that fetches data and is used only by the following function)
  * is leaded by _ suffix
  */
-async function _getShopData(
+export async function _getShopData(
   limit: number,
   offset: number = 0
 ): Promise<GetShopDataResult> {
