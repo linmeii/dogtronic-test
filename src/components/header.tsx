@@ -16,7 +16,7 @@ export default function Header(): JSX.Element {
       </h1>
       <p className="text-muted mt-5 max-w-3xl text-sm leading-relaxed font-normal sm:text-lg">
         I created this page as part of a test assignment - its purpose is to
-        present an optimized list of stores.
+        present an optimized list of shops.
       </p>
       <p className="text-muted mt-2.5 max-w-3xl text-sm leading-relaxed font-normal sm:text-lg">
         Scroll down to see how it works - and don&apos;t forget to customize the

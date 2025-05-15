@@ -6,9 +6,9 @@ import {
   QueryClientProvider,
   useInfiniteQuery,
 } from '@tanstack/react-query';
-import { renderHook } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { describe, expect, it, vi } from 'vitest';
+import { renderHook } from 'vitest-browser-react';
 
 const queryClient = new QueryClient();
 const queryWrapper = ({ children }: { children: ReactNode }) => (

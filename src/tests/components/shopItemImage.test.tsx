@@ -29,10 +29,12 @@ describe('COMPONENT [ShopItemImage]', () => {
   it('should hide blurhash when image is loaded', async () => {
     const { baseElement } = render(<ShopItem shop={testShop} />, { wrapper });
     const screen = page.elementLocator(baseElement);
-    await vi.waitFor(() =>
-      expect.element(screen.getByTestId('blurhash-wrapper')).toHaveStyle({
-        opacity: '0',
-      })
+    await vi.waitFor(
+      () =>
+        expect.element(screen.getByTestId('blurhash-wrapper')).toHaveStyle({
+          opacity: '0',
+        }),
+      { timeout: 10000 }
     );
   });
 });

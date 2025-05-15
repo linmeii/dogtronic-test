@@ -54,8 +54,14 @@ export default function ShopList(props: ShopListProps): JSX.Element {
       <Header />
       {queryParams.isLoading ? (
         <>
-          <div className="bg-foreground/10 container mx-auto my-3 h-96 max-h-96 animate-pulse rounded-lg" />
-          <div className="bg-foreground/10 container mx-auto my-3 h-96 max-h-96 animate-pulse rounded-lg" />
+          <div
+            data-testid="shop-skeleton-1"
+            className="bg-foreground/10 container mx-auto my-3 h-96 max-h-96 animate-pulse rounded-lg"
+          />
+          <div
+            data-testid="shop-skeleton-2"
+            className="bg-foreground/10 container mx-auto my-3 h-96 max-h-96 animate-pulse rounded-lg"
+          />
         </>
       ) : (
         <main
