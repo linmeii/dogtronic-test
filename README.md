@@ -1,54 +1,37 @@
-# React + TypeScript + Vite
+# Dogtronic Test Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React+TypeScript+Tailwind project demonstrating a shop listing interface with optimized data fetching and rendering techniques.
 
-Currently, two official plugins are available:
+## Instalation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository
+2. Install dependencies using `pnpm i` command
+3. Start the development server using `pnpm dev` command
 
-## Expanding the ESLint configuration
+## Running tests
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+To run the tests use `pnpm test` command
+⚠️ **Warning**: Set the delay in `./src/utils/constants.ts` to some realistic value such as 250ms for the sake of tests, you can raise it if you want to test the application with delay manually
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+## File structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+src/
+├── api/                `# API related files and mock data`
+├── components/         `# React components`
+├── tests/              `# Test files`
+├── utils/              `# Utility functions and constants`
+├── App.tsx             `# Main application component`
+└── main.tsx            `# Application entry point`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
-```
+## Technical Choices
+### Vite
+- It's a standard now, I shouldn't really speak much about it. Good and reliable (although I've recently migrated a very old CRA+Craco project to Rspack and it is amazing as well).
+### TanStack Query
+- I've used it to simulate real scenario as passing the items from a state or variable would be a real shame
+- It's easy to setup, and straight forward to use
+### TanStack Virtual
+- Whenever I think about large datasets to display, virtualization is a first thing that comes to my mind
+- I've used it many times in my career already and it proves its performance
+### BlurHash
+- Enchances the user experience by showing the blurred version of a photo before-hand based on a hash
+- Unfortunately, it requires separate backend (It would be possible using Next.js or any other 'fullstack framework') or a backend that sends the blurhashes alongside with image url
