@@ -2,6 +2,7 @@
   "files": [],
   "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
   "compilerOptions": {
+    "types": ["@vitest/browser/providers/playwright"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
