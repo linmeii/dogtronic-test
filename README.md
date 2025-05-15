@@ -11,17 +11,20 @@ This is a React+TypeScript+Tailwind project demonstrating a shop listing interfa
 ## Running tests
 
 To run the tests use `pnpm test` command
+
 ⚠️ **Warning**: Set the delay in `./src/utils/constants.ts` to some realistic value such as 250ms for the sake of tests, you can raise it if you want to test the application with delay manually
 
 ## File structure
 
+```bash
 src/
-├── api/                `# API related files and mock data`
-├── components/         `# React components`
-├── tests/              `# Test files`
-├── utils/              `# Utility functions and constants`
-├── App.tsx             `# Main application component`
-└── main.tsx            `# Application entry point`
+├── api/                # API related files and mock data
+├── components/         # React components
+├── tests/              # Test files
+├── utils/              # Utility functions and constants
+├── App.tsx             # Main application component
+└── main.tsx            # Application entry point
+```
 
 ## Technical Choices
 ### Vite
