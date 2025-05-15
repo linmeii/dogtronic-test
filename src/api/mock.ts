@@ -1,7 +1,7 @@
 /**
  * The type You've send me in trial task
  * On first thought I wanted to make a direct union of strings
- * but trial task didn't say that, so I followed with the capitalized types
+ * but test assignment didn't say that, so I followed with the capitalized types
  */
 type FRANCHISE = 'FRANCHISE';
 type REGULAR = 'REGULAR';
@@ -14,7 +14,7 @@ export type Shop = {
 
 /**
  * Mock data used in purpose to imitate a real backend data
- * Follows the given type in trial task
+ * Follows the given type in test assignment
  */
 export const mockData: Shop[] = [
   {
@@ -621,7 +621,7 @@ export const mockData: Shop[] = [
 
 /**
  * Basing on that I can't really modify the 'backend' data structure
- * as the trial task specifies how should it look,
+ * as the test assignment specifies how should it look,
  * I'm providing a blurhash for consideration
  * as it's probably the best UX possible
  */

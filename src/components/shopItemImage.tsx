@@ -57,12 +57,14 @@ export default function ShopItemImage(props: ShopItemImageProps): JSX.Element {
     >
       {dimensions.height > 0 && dimensions.width > 0 && (
         <div
+          data-testid="blurhash-wrapper"
           className={cn(
             'absolute inset-0 transition-opacity duration-500',
             imageLoaded ? 'opacity-0' : 'opacity-100'
           )}
         >
           <Blurhash
+            data-testid="blurhash"
             hash={hash}
             width={dimensions.width}
             height={dimensions.height}
