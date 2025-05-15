@@ -12,8 +12,11 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.6",
     "@tanstack/react-query": "^5.76.1",
+    "@tanstack/react-virtual": "^3.13.8",
     "clsx": "^2.1.1",
+    "lucide-react": "^0.510.0",
     "react": "^19.1.0",
+    "react-blurhash": "^0.3.0",
     "react-dom": "^19.1.0",
     "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.1.6"

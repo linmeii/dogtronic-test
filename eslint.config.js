@@ -20,7 +20,27 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
+      'react-hooks/exhaustive-deps': ['off'],
+      'prettier/prettier': [
+        'error',
+        {
+          printWidth: 80,
+          useTabs: false,
+          tabWidth: 2,
+          trailingComma: 'es5',
+          semi: true,
+          singleQuote: true,
+          bracketSpacing: true,
+          arrowParens: 'always',
+          jsxSingleQuote: false,
+          bracketSameLine: false,
+          endOfLine: 'lf',
+        },
+      ],
     },
   },
   eslintPluginPrettierRecommended
